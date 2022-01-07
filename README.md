@@ -17,12 +17,15 @@ Main Author: Tanja Šarčević (ta.sarcevic@gmail.com)
 
 Supervisors: Ana Paula Rocha (arocha@fe.up.pt) and António J. M. Castro (frisky.antonio@gmail.com)
 
-## Application Use Case
-One wants to ...
+## Application use case and solution
+To adapt the ABC algorithm to flight scheduling problem, we represent possible solution as an assignment of aircrafts to all operating flights. Aircrafts are initially at any point of the algorithm execution assigned to a flight if and only if the aircraft is not already assigned to some other flight in the same time in the same schedule. This restriction of the aircraft choice results in all the schedules (i.e. solutions) being feasible, which makes algorithm calculate costs and finding the best one only among the feasible solutions. 
 
-## Project File Structure:
+On the other hand, cancellation of the flight is as well possible. If there is such schedule where for some flight the choice of the aircraft is impossible (e.g. because at that time no aircrafts are available according to schedule), then the flight is being cancelled and it is penalized with a high number. Penalisation for cancellation amounts to approximately 10% of the total calculated cost of a random solution.
+
+## Project file structure:
 The root of the project comprises two folders and 6 files:
 * docs - contains the researcg report and the 2018 PAAMS paper with details about this work
+* lib - contains the joda-time-2.3 jar file needed to compile and run the program
 * src - with the source code
 
 root files:
@@ -33,6 +36,6 @@ root files:
 * events: 49 events that affect the operational plan
 * flights: the operational plan before being disrupted
 
-## Compile and Run Current Code
-* Library joda-time-2.3.jar is required.
-* Compile java project and run class Tester.
+## Compile and run current code
+* Library joda-time-2.3.jar is required (lib folder)
+* Compile java project and run class Tester
